@@ -1,7 +1,11 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      padding:{
+        '5/6': '8.3333333%'
+      }
+    },
     customForms: theme => ({
       default: {
         input: {

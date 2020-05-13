@@ -1,13 +1,13 @@
 <template>
 
-  <header class="bg-gray-900">
+  <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between">
     <div class="flex justify-between px-4 py-3">
       <div>
         <svg class="h-8 w-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">Workcation</svg>
       </div>
       <div class="flex">
         <button @click="toggle()" type="button"
-          class="px-2 text-gray-400 hover:text-white focus:outline-none focus:text-white">
+          class="sm:hidden px-2 text-gray-400 hover:text-white focus:outline-none focus:text-white">
           <svg v-if="!isOpen" class="h-6 w-6 fill-current" id="Capa_1" enable-background="new 0 0 451.111 451.111" height="512"
             viewBox="0 0 451.111 451.111" width="512" xmlns="http://www.w3.org/2000/svg">
             <path id="path-1_10_" d="m0 0h451.111v64.444h-451.111z" transform="translate(1 1)" />
@@ -22,19 +22,19 @@
       </div>
     </div>
 
-    <nav v-show="isOpen">
-      <div class="px-2 pt-2 pb-5 border-b border-gray-800">
-        <a href="#" class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800">List your property</a>
-        <a href="#" class="mt-1 block px-3 py-1 rounded mt-3 font-semibold text-white hover:bg-gray-800">Trips</a>
-        <a href="#" class="mt-1 block px-3 py-1 rounded mt-3 font-semibold text-white hover:bg-gray-800">Messages</a>
+    <nav class="sm:flex sm:items-center sm:px-4" :class="{'hidden' : !isOpen, 'block' : isOpen}">
+      <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-0 sm:py-0 sm:px-0">
+        <a href="#" class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2">List your property</a>
+        <a href="#" class="mt-1 block px-3 py-1 rounded mt-3 font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2 sm:mt-0">Trips</a>
+        <a href="#" class="mt-1 block px-3 py-1 rounded mt-3 font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2 sm:mt-0">Messages</a>
       </div>
-      <div class="px-5 py-5">
+      <div class="px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
         <div class="flex items-center">
-          <img class="h-10 w-10 object-cover rounded-full brder-2 border-gray-600"
+          <img class="h-10 w-10 object-cover rounded-full brder-2 border-gray-600 sm:h-8 sm:w-8"
             src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80">
-          <span class="ml-4 font-semibold text-gray-200">Isala Schoger</span>
+          <span class="ml-4 font-semibold text-gray-200 sm:hidden">Isala Schoger</span>
         </div>
-        <div class="mt-5">
+        <div class="mt-5 sm:hidden">
           <a href="#" class="block font-semibld text-gray-400 hover:text-white">Account settings</a>
           <a href="#" class="mt-3 block font-semibld text-gray-400 hover:text-white">Support</a>
           <a href="#" class="mt-3 block font-semibld text-gray-400 hover:text-white">Sign out</a>
