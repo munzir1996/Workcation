@@ -1,13 +1,13 @@
 <template>
 
-  <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between">
-    <div class="flex justify-between px-4 py-3">
+  <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between xl:bg-white">
+    <div class="flex justify-between px-4 py-3 xl:w-72 xl:bg-gray-900 xl:justify-center xl:py-5">
       <div>
         <svg class="h-8 w-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">Workcation</svg>
       </div>
-      <div class="flex">
+      <div class="flex sm:hidden">
         <button @click="toggle()" type="button"
-          class="sm:hidden px-2 text-gray-400 hover:text-white focus:outline-none focus:text-white">
+          class="px-2 text-gray-400 hover:text-white focus:outline-none focus:text-white">
           <svg v-if="!isOpen" class="h-6 w-6 fill-current" id="Capa_1" enable-background="new 0 0 451.111 451.111" height="512"
             viewBox="0 0 451.111 451.111" width="512" xmlns="http://www.w3.org/2000/svg">
             <path id="path-1_10_" d="m0 0h451.111v64.444h-451.111z" transform="translate(1 1)" />
@@ -22,22 +22,35 @@
       </div>
     </div>
 
-    <nav class="sm:flex sm:items-center sm:px-4" :class="{'hidden' : !isOpen, 'block' : isOpen}">
-      <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-0 sm:py-0 sm:px-0">
-        <a href="#" class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2">List your property</a>
-        <a href="#" class="mt-1 block px-3 py-1 rounded mt-3 font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2 sm:mt-0">Trips</a>
-        <a href="#" class="mt-1 block px-3 py-1 rounded mt-3 font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2 sm:mt-0">Messages</a>
-      </div>
-      <div class="px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
-        <div class="flex items-center">
-          <img class="h-10 w-10 object-cover rounded-full brder-2 border-gray-600 sm:h-8 sm:w-8"
-            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80">
-          <span class="ml-4 font-semibold text-gray-200 sm:hidden">Isala Schoger</span>
+    <nav class="sm:flex sm:items-center sm:px-4 xl:flex-1 xl:justify-between" :class="{'hidden' : !isOpen, 'block' : isOpen}">
+        <div class="hidden xl:block xl:relative xl:max-w-sm xl:w-full">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <svg class="h-6 w-6 fill-current text-gray-600" id="Capa_1" enable-background="new 0 0 515.558 515.558"
+              height="512" viewBox="0 0 515.558 515.558" width="512" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333 0-115.484-93.961-209.445-209.445-209.445s-209.444 93.961-209.444 209.445 93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564c0-.001-137.214-137.213-137.214-137.213zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z" />
+            </svg>
+          </div>
+          <input class="block w-full bg-gray-200 border border-transparent focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 rounded-lg px-10 pr-4 py-3"
+            placeholder="Search by keywords">
         </div>
-        <div class="mt-5 sm:hidden">
-          <a href="#" class="block font-semibld text-gray-400 hover:text-white">Account settings</a>
-          <a href="#" class="mt-3 block font-semibld text-gray-400 hover:text-white">Support</a>
-          <a href="#" class="mt-3 block font-semibld text-gray-400 hover:text-white">Sign out</a>
+      <div class="sm:flex sm:items-center">
+        <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-0 sm:py-0 sm:px-0">
+          <a href="#" class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2 xl:text-gray-900">List your property</a>
+          <a href="#" class="mt-1 block px-3 py-1 rounded mt-3 font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2 sm:mt-0 xl:text-gray-900">Trips</a>
+          <a href="#" class="mt-1 block px-3 py-1 rounded mt-3 font-semibold text-white hover:bg-gray-800 sm:text-sm sm:px-2 sm:mt-0 xl:text-gray-900">Messages</a>
+        </div>
+        <div class="px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
+          <div class="flex items-center">
+            <img class="h-10 w-10 object-cover rounded-full brder-2 border-gray-600 sm:h-8 sm:w-8 xl:border-gray-300"
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80">
+            <span class="ml-4 font-semibold text-gray-200 sm:hidden">Isala Schoger</span>
+          </div>
+          <div class="mt-5 sm:hidden">
+            <a href="#" class="block font-semibld text-gray-400 hover:text-white">Account settings</a>
+            <a href="#" class="mt-3 block font-semibld text-gray-400 hover:text-white">Support</a>
+            <a href="#" class="mt-3 block font-semibld text-gray-400 hover:text-white">Sign out</a>
+          </div>
         </div>
       </div>
     </nav>

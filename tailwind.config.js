@@ -2,6 +2,10 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      spacing:{
+        '72': '18rem',
+        '80': '20rem',
+      },
       padding:{
         '5/6': '8.3333333%'
       }
